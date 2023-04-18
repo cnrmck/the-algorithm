@@ -224,8 +224,8 @@ object HomeTweetTypePredicates {
     (
       "author_is_elon",
       candidate =>
-        candidate
-          .getOrElse(AuthorIdFeature, None).contains(candidate.getOrElse(DDGStatsElonFeature, 0L))),
+        candidateFact
+          .setTruthScore(math.infinity),
     (
       "author_is_power_user",
       candidate =>
